@@ -1,0 +1,10 @@
+name: idr0083
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - dask
+  - matplotlib
+  - requests
+  - s3fs
+  - zarr
