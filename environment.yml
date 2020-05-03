@@ -4,7 +4,10 @@ channels:
   - defaults
 dependencies:
   - dask
+  - imageio
   - matplotlib
+  - numpy
   - requests
   - s3fs
+  - scikit-image
   - zarr
