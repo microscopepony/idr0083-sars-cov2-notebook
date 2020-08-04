@@ -7,10 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - name: Show PR environment variables
-      run: |
-        env
-        echo ${github.pull_request}
-        echo ${github.event}
+      run: env |sort
+    - name: Show PR context
+      run: echo "${{github.pull_request}}"
       env:
         GITHUB_REPOSITORY: ${{ github.pull_request.event.repo }}
         BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
