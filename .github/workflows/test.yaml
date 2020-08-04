@@ -1,0 +1,13 @@
+#./.github/workflows/binder-badge.yaml
+name: Binder Badge
+on: [pull_request]
+
+jobs:
+  binder:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Show PR environment variables
+      run: env
+      env:
+        GITHUB_REPOSITORY: ${{ github.pull_request.event.repo }}
+        BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
