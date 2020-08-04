@@ -16,7 +16,8 @@ jobs:
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: `[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/${GITHUB_REPOSITORY}/${BRANCH_NAME}) :point_left: Launch a binder notebook on this branch`
+            body: `[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/${GITHUB_ACTOR}/${PR_HEAD_REPO}/${PR_HEAD_SHA}) :point_left: Launch a binder notebook on this branch`
           }) 
       env:
-        BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
+        PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        PR_HEAD_REPO: ${{ github.event.pull_request.head.repo.name }}
