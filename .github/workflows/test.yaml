@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - name: Show PR environment variables
-      run: env |sort
-    - name: Show PR context
-      run: echo "${{github.pull_request}}"
+      run: env | sort
       env:
-        GITHUB_REPOSITORY: ${{ github.pull_request.event.repo }}
-        BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
+        Z_GITHUB_REPOSITORY: ${{ github.pull_request.event.repo }}
+        Z_BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
+        Z_GITHUB_OWNER: ${{ github.repository_owner }} 
+        Z_HEAD_NAME: ${{ github.event.pull_request.head.repo.name }}
